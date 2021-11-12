@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="250dp"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/resume_item_person_name"
+    <ImageView
+        android:id="@+id/resume_image"
+        android:layout_width="71dp"
+        android:layout_height="62dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_action_name" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="34sp"
-        tools:text="Eduardo Wanderley" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/resume_item_person_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:text="Eduardo Wanderley"
+            android:textAlignment="center"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/resume_item_person_goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:text="Developer"
+            android:textSize="16dp" />
+    </LinearLayout>
 
 </LinearLayout>

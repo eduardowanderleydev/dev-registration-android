@@ -9,14 +9,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_list_tarefas"
-        android:layout_width="359dp"
-        android:layout_height="608dp"
+        android:layout_width="381dp"
+        android:layout_height="574dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="2"
-        tools:listitem="@layout/tarefa_list_item" />
+        tools:itemCount="2" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -24,9 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:contentDescription="adicionar"
+        android:contentDescription="add"
         android:focusable="true"
-        android:onClick="adicionar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
