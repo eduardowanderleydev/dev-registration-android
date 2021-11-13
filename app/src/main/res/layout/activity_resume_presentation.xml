@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.resumePresentationActivity">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="23dp"
+        android:text=""
+        android:textSize="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Eduardo Wanderley" />
+
+    <TextView
+        android:id="@+id/label_knowledgeAndSkills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conhecimento técnico e habilidades :"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView17"
+        app:layout_constraintStart_toStartOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/label_education"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Educação :"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/goal"
+        app:layout_constraintTop_toBottomOf="@+id/goal" />
+
+    <TextView
+        android:id="@+id/education"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/label_education"
+        app:layout_constraintTop_toBottomOf="@+id/label_education"
+        tools:text="Engenharia de Software - UCSAL" />
+
+    <TextView
+        android:id="@+id/label_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Objetivo :"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/phoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="Salvador"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/state"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="9dp"
+        android:text="BA"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/adressStreet"
+        app:layout_constraintStart_toEndOf="@+id/city" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="267dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/main_fab_adicionar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/email"
+        tools:text="JAVA, JEE, JSF, PRIMEFACES, SPRING, MAVEN, JAVASCRIPT, PYTHON" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/label_professionalExperience"
+        app:layout_constraintTop_toBottomOf="@+id/label_professionalExperience"
+        tools:text="Engenheiro de Software Sr - Apple" />
+
+    <TextView
+        android:id="@+id/phoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text=""
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        tools:text="71 - 123456789" />
+
+    <TextView
+        android:id="@+id/goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/label_goal"
+        app:layout_constraintTop_toBottomOf="@+id/label_goal"
+        tools:text="dominar o mundo através da programação" />
+
+    <TextView
+        android:id="@+id/label_professionalExperience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="Experiência Profissional :"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/education"
+        app:layout_constraintTop_toBottomOf="@+id/education" />
+
+    <TextView
+        android:id="@+id/adressDistrict"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/adressStreet"
+        app:layout_constraintStart_toStartOf="@+id/city"
+        tools:text="Graça" />
+
+    <TextView
+        android:id="@+id/adressStreet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
+        android:text=""
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintStart_toEndOf="@+id/adressDistrict"
+        tools:text="Rua Flórida" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="153dp"
+        android:text="eduardobraz.junior@ucsal.edu.br"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/adressDistrict"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/main_fab_adicionar"
+        android:layout_width="63dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="6dp"
+        android:clickable="true"
+        android:contentDescription="add"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/stat_sys_download_done" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,10 @@ public class Resume {
 
     private Adress adress;
 
+    private String phoneNumber;
+
+    private String email;
+
     private String education;
 
     private String professionalExperiences;

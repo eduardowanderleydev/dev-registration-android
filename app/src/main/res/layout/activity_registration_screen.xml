@@ -1,9 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activities.RegistrationActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.RegistrationActivity">
+
+        <TextView
+            android:id="@+id/label_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="85dp"
+            android:text="Nome :"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/request_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintStart_toStartOf="@+id/label_nome"
+            app:layout_constraintTop_toBottomOf="@+id/label_nome" />
+
+        <TextView
+            android:id="@+id/label_cep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:text="CEP : "
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/request_name"
+            app:layout_constraintTop_toBottomOf="@+id/request_name" />
+
+        <EditText
+            android:id="@+id/request_cep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="@+id/label_cep"
+            app:layout_constraintTop_toBottomOf="@+id/label_cep" />
+
+        <TextView
+            android:id="@+id/label_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Email :"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/request_cep"
+            app:layout_constraintTop_toBottomOf="@+id/request_cep" />
+
+        <EditText
+            android:id="@+id/request_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="@+id/label_email"
+            app:layout_constraintTop_toBottomOf="@+id/label_email" />
+
+        <TextView
+            android:id="@+id/label_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:text="Telefone :"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/request_email"
+            app:layout_constraintTop_toBottomOf="@+id/request_email" />
+
+        <EditText
+            android:id="@+id/request_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:inputType="phone"
+            app:layout_constraintStart_toStartOf="@+id/label_phone"
+            app:layout_constraintTop_toBottomOf="@+id/label_phone" />
+
+        <TextView
+            android:id="@+id/label_goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="20dp"
+            android:text="Objetivo :"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/request_phone"
+            app:layout_constraintTop_toBottomOf="@+id/request_phone" />
+
+        <EditText
+            android:id="@+id/request_goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="9dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintStart_toStartOf="@+id/label_goal"
+            app:layout_constraintTop_toBottomOf="@+id/label_goal" />
+
+        <TextView
+            android:id="@+id/label_education"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="10dp"
+            android:text="Educação :"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/request_education"
+            app:layout_constraintStart_toStartOf="@+id/request_education" />
+
+        <EditText
+            android:id="@+id/request_education"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="18dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintBottom_toTopOf="@+id/label_professionalExperience"
+            app:layout_constraintStart_toStartOf="@+id/label_professionalExperience" />
+
+        <TextView
+            android:id="@+id/label_professionalExperience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="163dp"
+            android:layout_marginBottom="163dp"
+            android:text="Experiência Profissional :"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/request_goal" />
+
+        <EditText
+            android:id="@+id/request_professionalExperience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            app:layout_constraintStart_toStartOf="@+id/label_professionalExperience"
+            app:layout_constraintTop_toBottomOf="@+id/label_professionalExperience" />
+
+        <TextView
+            android:id="@+id/label_knowledgeAndSkills"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="11dp"
+            android:text="Conhecimento técnico e habilidades :"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/request_knowledge"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/request_knowledge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/label_knowledgeAndSkills" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
