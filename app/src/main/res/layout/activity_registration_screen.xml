@@ -2,198 +2,183 @@
 
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activities.RegistrationActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.activities.RegistrationActivity">
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/label_nome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="41dp"
-            android:layout_marginTop="85dp"
+            android:baselineAligned="false"
             android:text="Nome :"
+
+            android:textAlignment="textStart"
             android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/request_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
+            android:layout_marginBottom="12dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text=""
-            app:layout_constraintStart_toStartOf="@+id/label_nome"
-            app:layout_constraintTop_toBottomOf="@+id/label_nome" />
+            android:minHeight="48dp"
+            android:text="" />
 
         <TextView
             android:id="@+id/label_cep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_marginBottom="3dp"
             android:text="CEP : "
             android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/request_name"
-            app:layout_constraintTop_toBottomOf="@+id/request_name" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/request_cep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginBottom="11dp"
             android:ems="10"
-            android:inputType="number"
-            app:layout_constraintStart_toStartOf="@+id/label_cep"
-            app:layout_constraintTop_toBottomOf="@+id/label_cep" />
+            android:contentDescription="CEP"
+            android:inputType="number" />
 
         <TextView
             android:id="@+id/label_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="3dp"
             android:text="Email :"
             android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/request_cep"
-            app:layout_constraintTop_toBottomOf="@+id/request_cep" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/request_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginBottom="9dp"
+            android:contentDescription="Email"
             android:ems="10"
-            android:inputType="textEmailAddress"
-            app:layout_constraintStart_toStartOf="@+id/label_email"
-            app:layout_constraintTop_toBottomOf="@+id/label_email" />
+            android:inputType="textEmailAddress" />
 
         <TextView
             android:id="@+id/label_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
+            android:layout_marginBottom="3dp"
             android:text="Telefone :"
             android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/request_email"
-            app:layout_constraintTop_toBottomOf="@+id/request_email" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/request_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="12dp"
+            android:contentDescription="Telefone"
             android:ems="10"
-            android:inputType="phone"
-            app:layout_constraintStart_toStartOf="@+id/label_phone"
-            app:layout_constraintTop_toBottomOf="@+id/label_phone" />
+            android:inputType="phone" />
 
         <TextView
             android:id="@+id/label_goal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="1dp"
-            android:layout_marginTop="20dp"
             android:text="Objetivo :"
             android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/request_phone"
-            app:layout_constraintTop_toBottomOf="@+id/request_phone" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/request_goal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginBottom="12dp"
+            android:contentDescription="Objetivo"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text=""
-            app:layout_constraintStart_toStartOf="@+id/label_goal"
-            app:layout_constraintTop_toBottomOf="@+id/label_goal" />
+            android:text="" />
 
         <TextView
             android:id="@+id/label_education"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="1dp"
             android:text="Educação :"
             android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/request_education"
-            app:layout_constraintStart_toStartOf="@+id/request_education" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/request_education"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="Educação"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text=""
-            app:layout_constraintBottom_toTopOf="@+id/label_professionalExperience"
-            app:layout_constraintStart_toStartOf="@+id/label_professionalExperience" />
+            android:text="" />
 
         <TextView
             android:id="@+id/label_professionalExperience"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="41dp"
-            android:layout_marginTop="163dp"
-            android:layout_marginBottom="163dp"
+            android:layout_marginBottom="4dp"
             android:text="Experiência Profissional :"
             android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/request_goal" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/request_professionalExperience"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Experiência profissional"
             android:ems="10"
             android:gravity="start|top"
-            android:inputType="textMultiLine"
-            app:layout_constraintStart_toStartOf="@+id/label_professionalExperience"
-            app:layout_constraintTop_toBottomOf="@+id/label_professionalExperience" />
+            android:inputType="textMultiLine" />
 
         <TextView
             android:id="@+id/label_knowledgeAndSkills"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="11dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="1dp"
             android:text="Conhecimento técnico e habilidades :"
             android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/request_knowledge"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/request_knowledge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
+            android:layout_marginStart="4dp"
+            android:contentDescription="Conhecimento"
             android:ems="10"
             android:gravity="start|top"
-            android:inputType="textMultiLine"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/label_knowledgeAndSkills" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="25dp"
+            android:contentDescription="Botão de salvar"
+            android:text="Salvar" />
+
+    </LinearLayout>
 </ScrollView>

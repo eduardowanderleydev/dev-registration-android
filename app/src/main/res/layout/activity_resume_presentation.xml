@@ -22,16 +22,17 @@
         android:id="@+id/label_knowledgeAndSkills"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
         android:text="Conhecimento técnico e habilidades :"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView17"
-        app:layout_constraintStart_toStartOf="@+id/textView17" />
+        app:layout_constraintBottom_toTopOf="@+id/skills"
+        app:layout_constraintStart_toStartOf="@+id/skills" />
 
     <TextView
         android:id="@+id/label_education"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="19dp"
         android:text="Educação :"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/goal"
@@ -50,7 +51,7 @@
         android:id="@+id/label_goal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="19dp"
         android:text="Objetivo :"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/phoneNumber"
@@ -61,7 +62,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:text="Salvador"
+        android:text=""
+        tools:text="Salvador"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/state"
         app:layout_constraintStart_toStartOf="parent" />
@@ -71,14 +73,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="9dp"
-        android:text="BA"
+        android:text=""
+        tools:text="BA"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/adressStreet"
         app:layout_constraintStart_toEndOf="@+id/city" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/skills"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginStart="41dp"
@@ -93,10 +95,9 @@
         tools:text="JAVA, JEE, JSF, PRIMEFACES, SPRING, MAVEN, JAVASCRIPT, PYTHON" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/experience"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
         android:text=""
         app:layout_constraintStart_toStartOf="@+id/label_professionalExperience"
         app:layout_constraintTop_toBottomOf="@+id/label_professionalExperience"
@@ -106,7 +107,7 @@
         android:id="@+id/phoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="2dp"
         android:text=""
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/email"
@@ -147,7 +148,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="2dp"
         android:text=""
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/email"

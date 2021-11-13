@@ -1,6 +1,8 @@
 package br.com.ucsal.devregistration.domain;
 
-public class Resume {
+import java.io.Serializable;
+
+public class Resume implements Serializable {
 
     private String name;
 
