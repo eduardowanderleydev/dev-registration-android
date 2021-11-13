@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.resumePresentationActivity">
+    tools:context=".ui.activities.ResumePresentationActivity">
 
     <TextView
         android:id="@+id/name"
@@ -86,7 +86,7 @@
         android:layout_marginEnd="41dp"
         android:layout_marginBottom="267dp"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="@+id/main_fab_adicionar"
+        app:layout_constraintBottom_toBottomOf="@+id/fab_download"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/email"
@@ -165,7 +165,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/main_fab_adicionar"
+        android:id="@+id/fab_download"
         android:layout_width="63dp"
         android:layout_height="53dp"
         android:layout_marginEnd="4dp"

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DevRegistration">
         <activity
-            android:name=".ui.activities.resumePresentationActivity"
+            android:name=".ui.activities.ResumePresentationActivity"
             android:exported="true" />
         <activity
             android:name=".ui.activities.RegistrationActivity"

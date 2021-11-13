@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import br.com.ucsal.devregistration.R;
 
-public class resumePresentationActivity extends AppCompatActivity {
+public class ResumePresentationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
