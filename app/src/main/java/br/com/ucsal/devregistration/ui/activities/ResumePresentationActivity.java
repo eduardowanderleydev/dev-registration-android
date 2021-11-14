@@ -12,7 +12,10 @@ import br.com.ucsal.devregistration.domain.Resume;
 public class ResumePresentationActivity extends AppCompatActivity {
 
     private TextView personName;
-    // TODO implementar endereco
+    private TextView personCity;
+    private TextView personState;
+    private TextView personDistrict;
+    private TextView personStreet;
     private TextView personEmail;
     private TextView personPhone;
     private TextView personGoal;
@@ -38,6 +41,10 @@ public class ResumePresentationActivity extends AppCompatActivity {
         personEducation = findViewById(R.id.education);
         personExperience = findViewById(R.id.experience);
         personSkills = findViewById(R.id.skills);
+        personCity = findViewById(R.id.city);
+        personState = findViewById(R.id.state);
+        personDistrict= findViewById(R.id.adressDistrict);
+        personStreet= findViewById(R.id.adressStreet);
     }
 
     private void bindIntentResumeInViewResume() {
@@ -52,6 +59,11 @@ public class ResumePresentationActivity extends AppCompatActivity {
             personEducation.setText(resume.getEducation());
             personExperience.setText(resume.getProfessionalExperiences());
             personSkills.setText(resume.getKnowledgeAndSkills());
+            personCity.setText(resume.getAdress().getLocalidade());
+            personState.setText(resume.getAdress().getUf());
+            personDistrict.setText(resume.getAdress().getBairro());
+            personStreet.setText(resume.getAdress().getLogradouro());
+
         } else {
             throw new RuntimeException("Resume cannot be found");
         }

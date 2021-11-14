@@ -1,10 +1,11 @@
 package br.com.ucsal.devregistration.ui.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -12,7 +13,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.Arrays;
 
 import br.com.ucsal.devregistration.R;
-import br.com.ucsal.devregistration.domain.Adress;
 import br.com.ucsal.devregistration.domain.Resume;
 import br.com.ucsal.devregistration.repository.ArrayRepository;
 import br.com.ucsal.devregistration.ui.adapter.ResumeAdapter;
@@ -41,17 +41,35 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("resume", adapter.getItem(i));
             startActivity(intent);
         });
-
     }
 
     private void configureLongClickToRemoveResume() {
         listView.setOnItemLongClickListener( (adapterView, view, i, l) -> {
-            // TODO perguntar ao usuário se tem certeza que deseja remover
-            Resume resumeToRemove = (Resume) adapter.getItem(i);
-            if (resumeToRemove != null ){
-                removeResume(resumeToRemove);
-            }
-            return false;
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setCancelable(true);
+            builder.setTitle("Tem certeza ?");
+            builder.setMessage("Um currículo excluido NÃO pode ser recuperado.");
+            builder.setPositiveButton("Confirmar",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Resume resumeToRemove = (Resume) adapter.getItem(i);
+                            if (resumeToRemove != null ){
+                                removeResume(resumeToRemove);
+                            }
+                        }
+                    });
+            builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    return;
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
+            return true;
         });
     }
 

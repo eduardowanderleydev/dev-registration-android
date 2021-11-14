@@ -6,7 +6,7 @@ public class Resume implements Serializable {
 
     private String name;
 
-    private Adress adress;
+    private Address address;
 
     private String phoneNumber;
 
@@ -28,12 +28,12 @@ public class Resume implements Serializable {
         this.name = name;
     }
 
-    public Adress getAdress() {
-        return adress;
+    public Address getAdress() {
+        return address;
     }
 
-    public void setAdress(Adress adress) {
-        this.adress = adress;
+    public void setAdress(Address address) {
+        this.address = address;
     }
 
     public String getPhoneNumber() {
