@@ -13,6 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.Arrays;
 
 import br.com.ucsal.devregistration.R;
+import br.com.ucsal.devregistration.domain.Address;
 import br.com.ucsal.devregistration.domain.Resume;
 import br.com.ucsal.devregistration.repository.ArrayRepository;
 import br.com.ucsal.devregistration.ui.adapter.ResumeAdapter;
@@ -87,7 +88,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void addSomeResumesToTest() {
         Resume resumeEduardo = new Resume();
-        resumeEduardo.setName("Eduardo");
+        Address address = new Address();
+        address.setBairro("Graça");
+        address.setCep("44200000");
+        address.setComplemento("casa");
+        address.setLogradouro("Rua Flórida");
+        address.setLocalidade("Algum");
+        address.setUf("BA");
+        resumeEduardo.setAdress(address);
+        resumeEduardo.setName("Eduardo Wanderley");
         resumeEduardo.setEmail("eduardowanderleydev@gmail.com");
         resumeEduardo.setPhoneNumber("75 9 8207-4248");
         resumeEduardo.setKnowledgeAndSkills("Java, Spring, Maven, Javascript, Typescript e sla mais oq");

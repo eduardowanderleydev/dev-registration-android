@@ -14,3 +14,15 @@ Aapp/src/main/java/br/com/ucsal/devregistration/dao/AdressDAO.java,0/0/0006056e
 Napp/src/main/java/br/com/ucsal/devregistration/repository/ArrayRepository.java,f/7/f75f401b917b832776183c2a77318e3c9d00dee2
 |
 Lapp/src/main/java/br/com/ucsal/devregistration/ui/adapter/ResumeAdapter.java,2/4/24f7e635826c7cd143487ec116d56783754118b0
+q
+Aapp/src/main/java/br/com/ucsal/devregistration/domain/Resume.java,4/4/44d58447603a1a311b4c1949e1ae0241cd7e138c
+†
+Vapp/src/main/java/br/com/ucsal/devregistration/ui/activities/RegistrationActivity.java,2/6/269b3e035b70b7ac67f2e176aa3369af0799a946
+w
+Gapp/src/main/java/br/com/ucsal/devregistration/service/HttpService.java,5/4/54fe92986cee9e68b6e9bb66db15e980e4dc4f87
+r
+Bapp/src/main/java/br/com/ucsal/devregistration/domain/Address.java,8/6/863f9498250758a2cbc4c71b27168e15eba71b34
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+<
+build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35

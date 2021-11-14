@@ -89,7 +89,7 @@
         android:layout_marginEnd="41dp"
         android:layout_marginBottom="267dp"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="@+id/fab_download"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_export"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/email"
@@ -167,7 +167,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_download"
+        android:id="@+id/btn_export"
         android:layout_width="63dp"
         android:layout_height="53dp"
         android:layout_marginEnd="4dp"
