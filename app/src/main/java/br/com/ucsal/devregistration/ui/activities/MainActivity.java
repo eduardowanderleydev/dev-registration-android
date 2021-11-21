@@ -35,7 +35,10 @@ public class MainActivity extends AppCompatActivity {
         configureAdapter();
         configureButtonAddResume();
         configureLongClickToRemoveResume();
+        configureClickToOpenResumePreview();
+    }
 
+    private void configureClickToOpenResumePreview() {
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(MainActivity.this, ResumePresentationActivity.class);
             intent.putExtra("resume", adapter.getItem(i));
@@ -98,5 +101,4 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_resumes);
         buttonAddResume = findViewById(R.id.fab_adicionar);
     }
-
 }
