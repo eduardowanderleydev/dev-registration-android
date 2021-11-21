@@ -163,14 +163,14 @@
         android:id="@+id/btn_export"
         android:layout_width="63dp"
         android:layout_height="53dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:clickable="true"
         android:contentDescription="add"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/stat_sys_download_done" />
+        app:srcCompat="@drawable/ic_pdf_download" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

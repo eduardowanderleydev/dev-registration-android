@@ -49,6 +49,7 @@ public class ResumePresentationActivity extends AppCompatActivity {
 
         configureViews();
         bindIntentResumeInViewResume();
+        setTitle("Currículo de " + personName.getText().toString());
 
         btnExport.setOnClickListener(view -> {
             PermissionUtils.verifyStoragePermissions(this);

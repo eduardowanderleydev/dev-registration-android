@@ -5,6 +5,10 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
     tools:context=".ui.activities.MainActivity">
 
 
@@ -28,6 +32,8 @@
         android:clickable="true"
         android:contentDescription="add"
         android:focusable="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
