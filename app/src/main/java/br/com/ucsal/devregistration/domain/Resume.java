@@ -1,24 +1,44 @@
 package br.com.ucsal.devregistration.domain;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+@Entity(tableName = "resume")
 public class Resume implements Serializable {
 
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "resume_id")
+    private Long id;
     private String name;
+    private String phoneNumber;
+    private String email;
+    private String education;
+    private String professionalExperiences;
+    private String goal;
+    private String knowledgeAndSkills;
 
+    @Embedded
     private Address address;
 
-    private String phoneNumber;
+    public Long getId() {
+        return id;
+    }
 
-    private String email;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    private String education;
+    public Address getAddress() {
+        return address;
+    }
 
-    private String professionalExperiences;
-
-    private String goal;
-
-    private String knowledgeAndSkills;
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public String getName() {
         return name;

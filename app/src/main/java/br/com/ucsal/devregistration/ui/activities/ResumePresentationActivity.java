@@ -125,7 +125,7 @@ public class ResumePresentationActivity extends AppCompatActivity {
         canvas.drawText(personGoal.getText().toString(), 105, 240, textColor );
 
         // education
-        canvas.drawText("Education :", 105, 270, textColor );
+        canvas.drawText("Educação :", 105, 270, textColor );
         canvas.drawText(personEducation.getText().toString(), 105, 285, textColor );
 
         // experience

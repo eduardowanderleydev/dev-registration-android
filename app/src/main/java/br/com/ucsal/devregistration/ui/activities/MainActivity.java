@@ -10,12 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.Arrays;
-
 import br.com.ucsal.devregistration.R;
-import br.com.ucsal.devregistration.domain.Address;
+import br.com.ucsal.devregistration.db.Db;
 import br.com.ucsal.devregistration.domain.Resume;
-import br.com.ucsal.devregistration.repository.ArrayRepository;
 import br.com.ucsal.devregistration.ui.adapter.ResumeAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton buttonAddResume;
     private ResumeAdapter adapter;
 
+    private Db db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("Currículos");
 
-        addSomeResumesToTest();
+        configureDb();
         configureViews();
         configureAdapter();
         configureButtonAddResume();
@@ -44,18 +43,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void configureDb() {
+        db = Db.getInstance(this);
+    }
+
     private void configureLongClickToRemoveResume() {
-        listView.setOnItemLongClickListener( (adapterView, view, i, l) -> {
+        listView.setOnItemLongClickListener((adapterView, view, i, l) -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setCancelable(true);
             builder.setTitle("Tem certeza ?");
-            builder.setMessage("Um currículo excluido NÃO pode ser recuperado.");
+            builder.setMessage("Um currículo excluído NÃO pode ser recuperado.");
             builder.setPositiveButton("Confirmar",
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Resume resumeToRemove = (Resume) adapter.getItem(i);
-                            if (resumeToRemove != null ){
+                            if (resumeToRemove != null) {
                                 removeResume(resumeToRemove);
                             }
                         }
@@ -82,44 +85,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void removeResume(Resume resumeToRemove) {
-        ArrayRepository.remove(resumeToRemove);
+        db.ResumeDAO().delete(resumeToRemove);
         adapter.remove(resumeToRemove);
     }
 
-    private void addSomeResumesToTest() {
-        Resume resumeEduardo = new Resume();
-        Address address = new Address();
-        address.setBairro("Graça");
-        address.setCep("44200000");
-        address.setComplemento("casa");
-        address.setLogradouro("Rua Flórida");
-        address.setLocalidade("Algum");
-        address.setUf("BA");
-        resumeEduardo.setAdress(address);
-        resumeEduardo.setName("Eduardo Wanderley");
-        resumeEduardo.setEmail("eduardowanderleydev@gmail.com");
-        resumeEduardo.setPhoneNumber("75 9 8207-4248");
-        resumeEduardo.setKnowledgeAndSkills("Java, Spring, Maven, Javascript, Typescript e sla mais oq");
-        resumeEduardo.setGoal("Ser milionário");
-        resumeEduardo.setProfessionalExperiences("Engenheiro de software Sr - Apple");
-
-        Resume resumeCaio = new Resume();
-        resumeCaio.setName("Caio");
-        resumeCaio.setGoal("desenvolvedor");
-
-        Resume resumeGuilherme = new Resume();
-        resumeGuilherme.setName("Guilherme");
-        resumeGuilherme.setGoal("frontend developer");
-
-        Resume resumeGustavo = new Resume();
-        resumeGustavo.setName("Gustavo");
-        resumeGustavo.setGoal("Engenheiro de Software");
-
-        ArrayRepository.addAll(Arrays.asList(resumeEduardo, resumeCaio, resumeGuilherme, resumeGustavo));
-    }
-
     private void configureAdapter() {
-        adapter = new ResumeAdapter(this, ArrayRepository.findAll());
+        adapter = new ResumeAdapter(this, db.ResumeDAO().findAll());
         listView.setAdapter(adapter);
     }
 

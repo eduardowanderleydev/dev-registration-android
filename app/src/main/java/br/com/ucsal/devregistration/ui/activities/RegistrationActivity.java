@@ -11,9 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.concurrent.ExecutionException;
 
 import br.com.ucsal.devregistration.R;
+import br.com.ucsal.devregistration.db.Db;
 import br.com.ucsal.devregistration.domain.Address;
 import br.com.ucsal.devregistration.domain.Resume;
-import br.com.ucsal.devregistration.repository.ArrayRepository;
 import br.com.ucsal.devregistration.service.HttpService;
 
 public class RegistrationActivity extends AppCompatActivity {
@@ -29,11 +29,16 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private Button saveButton;
 
+    private Db db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_screen);
 
+        setTitle("Novo currículo");
+
+        configureDb();
         configureView();
         configureButtonAddTouch();
     }
@@ -42,7 +47,7 @@ public class RegistrationActivity extends AppCompatActivity {
         saveButton.setOnClickListener(view -> {
             Resume resume = createResumeTroughFields();
             if (isValidFields(resume)) {
-                ArrayRepository.add(resume);
+                db.ResumeDAO().insert(resume);
 
                 Intent toGo = new Intent(RegistrationActivity.this, MainActivity.class);
                 toGo.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -110,5 +115,9 @@ public class RegistrationActivity extends AppCompatActivity {
         personSkills = findViewById(R.id.request_knowledge);
 
         saveButton = findViewById(R.id.btn_save);
+    }
+
+    private void configureDb() {
+        db = Db.getInstance(this);
     }
 }
