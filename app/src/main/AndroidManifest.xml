@@ -16,8 +16,7 @@
         android:usesCleartextTraffic="true"
         android:requestLegacyExternalStorage="true"
         android:preserveLegacyExternalStorage="true"
-        android:theme="@style/Theme.DevRegistration"
-        >
+        android:theme="@style/Theme.DevRegistration">
         <activity
             android:name=".ui.activities.ResumePresentationActivity"
             android:exported="true" />

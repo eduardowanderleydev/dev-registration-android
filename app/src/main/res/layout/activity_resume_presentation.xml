@@ -22,11 +22,10 @@
         android:id="@+id/label_knowledgeAndSkills"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="32dp"
         android:text="Conhecimento técnico e habilidades :"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/skills"
-        app:layout_constraintStart_toStartOf="@+id/skills"
+        app:layout_constraintStart_toStartOf="@+id/experience"
         app:layout_constraintTop_toBottomOf="@+id/experience" />
 
     <TextView
@@ -82,17 +81,11 @@
 
     <TextView
         android:id="@+id/skills"
-        android:layout_width="0dp"
+        android:layout_width="331dp"
         android:layout_height="37dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="268dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="267dp"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="@+id/btn_export"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/email"
+        app:layout_constraintStart_toStartOf="@+id/label_knowledgeAndSkills"
+        app:layout_constraintTop_toBottomOf="@+id/label_knowledgeAndSkills"
         tools:text="JAVA, JEE, JSF, PRIMEFACES, SPRING, MAVEN, JAVASCRIPT, PYTHON" />
 
     <TextView

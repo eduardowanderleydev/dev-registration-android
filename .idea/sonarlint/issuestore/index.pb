@@ -10,5 +10,3 @@ Capp/src/test/java/br/com/ucsal/devregistration/ExampleUnitTest.java,b/2/b29128
 Lapp/src/main/java/br/com/ucsal/devregistration/ui/adapter/ResumeAdapter.java,2/4/24f7e635826c7cd143487ec116d56783754118b0
 <
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
