@@ -26,5 +26,5 @@ public abstract class Db extends RoomDatabase {
         return instance;
     }
 
-    public abstract ResumeDAO ResumeDAO();
+    public abstract ResumeDAO resumeDAO();
 }

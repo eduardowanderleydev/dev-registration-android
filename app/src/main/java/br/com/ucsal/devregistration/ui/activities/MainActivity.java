@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Resume resumeToRemove = (Resume) adapter.getItem(i);
+                            Resume resumeToRemove = adapter.getItem(i);
                             if (resumeToRemove != null) {
                                 removeResume(resumeToRemove);
                             }
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    return;
+                    // do nothing because its a cancel button
                 }
             });
 
@@ -85,12 +85,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void removeResume(Resume resumeToRemove) {
-        db.ResumeDAO().delete(resumeToRemove);
+        db.resumeDAO().delete(resumeToRemove);
         adapter.remove(resumeToRemove);
     }
 
     private void configureAdapter() {
-        adapter = new ResumeAdapter(this, db.ResumeDAO().findAll());
+        adapter = new ResumeAdapter(this, db.resumeDAO().findAll());
         listView.setAdapter(adapter);
     }
 

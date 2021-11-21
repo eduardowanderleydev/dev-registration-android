@@ -32,28 +32,12 @@ public class Resume implements Serializable {
         this.id = id;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Address getAdress() {
-        return address;
-    }
-
-    public void setAdress(Address address) {
-        this.address = address;
     }
 
     public String getPhoneNumber() {
@@ -102,5 +86,13 @@ public class Resume implements Serializable {
 
     public void setKnowledgeAndSkills(String knowledgeAndSkills) {
         this.knowledgeAndSkills = knowledgeAndSkills;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

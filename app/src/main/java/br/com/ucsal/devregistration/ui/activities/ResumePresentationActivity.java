@@ -22,6 +22,7 @@ import java.io.IOException;
 
 import br.com.ucsal.devregistration.R;
 import br.com.ucsal.devregistration.domain.Resume;
+import br.com.ucsal.devregistration.exception.ResumeNotFoundException;
 import br.com.ucsal.devregistration.util.PermissionUtils;
 
 public class ResumePresentationActivity extends AppCompatActivity {
@@ -53,7 +54,7 @@ public class ResumePresentationActivity extends AppCompatActivity {
 
         btnExport.setOnClickListener(view -> {
             PermissionUtils.verifyStoragePermissions(this);
-            generatePDF(view);
+            generatePDF();
         });
 
     }
@@ -85,17 +86,17 @@ public class ResumePresentationActivity extends AppCompatActivity {
             personEducation.setText(resume.getEducation());
             personExperience.setText(resume.getProfessionalExperiences());
             personSkills.setText(resume.getKnowledgeAndSkills());
-            personCity.setText(resume.getAdress().getLocalidade());
-            personState.setText(resume.getAdress().getUf());
-            personDistrict.setText(resume.getAdress().getBairro());
-            personStreet.setText(resume.getAdress().getLogradouro());
+            personCity.setText(resume.getAddress().getLocalidade());
+            personState.setText(resume.getAddress().getUf());
+            personDistrict.setText(resume.getAddress().getBairro());
+            personStreet.setText(resume.getAddress().getLogradouro());
 
         } else {
-            throw new RuntimeException("Resume cannot be found");
+            throw new ResumeNotFoundException("Resume cannot be found");
         }
     }
 
-    public void generatePDF(View view) {
+    public void generatePDF() {
         PdfDocument doc = new PdfDocument();
 
         PdfDocument

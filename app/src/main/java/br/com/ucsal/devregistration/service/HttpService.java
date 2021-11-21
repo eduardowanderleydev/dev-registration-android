@@ -6,7 +6,6 @@ import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
@@ -40,8 +39,6 @@ public class HttpService extends AsyncTask<Void, Void, Address> {
                 while (scanner.hasNext()) {
                     resposta.append(scanner.next());
                 }
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }

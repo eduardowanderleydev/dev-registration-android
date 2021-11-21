@@ -47,7 +47,7 @@ public class RegistrationActivity extends AppCompatActivity {
         saveButton.setOnClickListener(view -> {
             Resume resume = createResumeTroughFields();
             if (isValidFields(resume)) {
-                db.ResumeDAO().insert(resume);
+                db.resumeDAO().insert(resume);
 
                 Intent toGo = new Intent(RegistrationActivity.this, MainActivity.class);
                 toGo.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -83,7 +83,7 @@ public class RegistrationActivity extends AppCompatActivity {
         Resume resume = new Resume();
         resume.setName(personName.getText().toString());
         Address address = returnAddressByCep(personCEP.getText().toString());
-        resume.setAdress(address);
+        resume.setAddress(address);
         resume.setGoal(personGoal.getText().toString());
         resume.setEducation(personEducation.getText().toString());
         resume.setKnowledgeAndSkills(personSkills.getText().toString());
@@ -96,9 +96,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private Address returnAddressByCep(String cep) {
         try {
             return new HttpService(cep).execute().get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         return null;
