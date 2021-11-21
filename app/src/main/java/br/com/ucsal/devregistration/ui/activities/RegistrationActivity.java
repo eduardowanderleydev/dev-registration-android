@@ -14,7 +14,9 @@ import br.com.ucsal.devregistration.R;
 import br.com.ucsal.devregistration.db.Db;
 import br.com.ucsal.devregistration.domain.Address;
 import br.com.ucsal.devregistration.domain.Resume;
+import br.com.ucsal.devregistration.exception.InvalidCEPException;
 import br.com.ucsal.devregistration.service.HttpService;
+import br.com.ucsal.devregistration.util.CEPUtils;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -45,6 +47,14 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private void configureButtonAddTouch() {
         saveButton.setOnClickListener(view -> {
+
+            try {
+                CEPUtils.validaCEP(personCEP.getText().toString());
+            } catch (InvalidCEPException e) {
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             Resume resume = createResumeTroughFields();
             if (isValidFields(resume)) {
                 db.resumeDAO().insert(resume);
@@ -60,6 +70,8 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 
+
+
     private boolean isValidFields(Resume resume) {
         if (resume.getEducation() == null || resume.getEducation().isEmpty())
             return false;
@@ -70,8 +82,6 @@ public class RegistrationActivity extends AppCompatActivity {
         if (resume.getName() == null || resume.getName().isEmpty())
             return false;
         if (resume.getKnowledgeAndSkills() == null || resume.getKnowledgeAndSkills().isEmpty())
-            return false;
-        if (resume.getProfessionalExperiences() == null || resume.getProfessionalExperiences().isEmpty())
             return false;
         if (resume.getPhoneNumber() == null || resume.getPhoneNumber().isEmpty())
             return false;
