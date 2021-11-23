@@ -18,6 +18,9 @@ import br.com.ucsal.devregistration.exception.InvalidCEPException;
 import br.com.ucsal.devregistration.service.HttpService;
 import br.com.ucsal.devregistration.util.CEPUtils;
 
+/**
+ * Activity responsável por renderizar tela de cadastro de um novo currículo e realizar as chamadas para operação de inserção do currículo no banco de dados.
+ */
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText personName;
@@ -45,6 +48,11 @@ public class RegistrationActivity extends AppCompatActivity {
         configureButtonAddTouch();
     }
 
+    /**
+     * Método responsável por configurar o botão de adicionar um novo currículo no banco de dados.
+     * <p>
+     * Após o currículo ser adicionado com sucesso, a pilha de intents é limpa, impedindo que o usuário possa desfazer a inserção.
+     */
     private void configureButtonAddTouch() {
         saveButton.setOnClickListener(view -> {
 
@@ -71,7 +79,12 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
 
-
+    /**
+     * Método responsável pela validação dos campos digitados pelo usuário para cadastro de um novo currículo.
+     *
+     * @param resume
+     * @return true se todas as informações do currículo analisado forem válidas.
+     */
     private boolean isValidFields(Resume resume) {
         if (resume.getEducation() == null || resume.getEducation().isEmpty())
             return false;
@@ -89,6 +102,11 @@ public class RegistrationActivity extends AppCompatActivity {
             return true;
     }
 
+    /**
+     * Método responsável por criar um novo Currículo com base nas informações que foram digitadas pelo usuário.
+     *
+     * @return um novo Currículo, populado com os dados digitados pelo usuário.
+     */
     private Resume createResumeTroughFields() {
         Resume resume = new Resume();
         resume.setName(personName.getText().toString());
@@ -103,6 +121,12 @@ public class RegistrationActivity extends AppCompatActivity {
         return resume;
     }
 
+    /**
+     * Método responsável por fazer a chamada a classe HttpService passando o CEP informado pelo usuário como parâmetro.
+     *
+     * @param cep
+     * @return o endereço completo com base no CEP que foi informado pelo usuário.
+     */
     private Address returnAddressByCep(String cep) {
         try {
             return new HttpService(cep).execute().get();
@@ -112,6 +136,9 @@ public class RegistrationActivity extends AppCompatActivity {
         return null;
     }
 
+    /**
+     * Método responsável por fazer o bind entre os atributos definidos e os elementos da view.
+     */
     private void configureView() {
         personName = findViewById(R.id.request_name);
         personCEP = findViewById(R.id.request_cep);

@@ -6,6 +6,9 @@ import android.content.pm.PackageManager;
 
 import androidx.core.app.ActivityCompat;
 
+/**
+ * Classe responsável por gerenciar as permissões necessárias para que o aplicativo funcione corretamente.
+ */
 public class PermissionUtils {
 
     // Storage Permissions
@@ -16,9 +19,9 @@ public class PermissionUtils {
     };
 
     /**
-     * Checks if the app has permission to write to device storage
-     *
-     * If the app does not has permission then the user will be prompted to grant permissions
+     * Chaca se o app tem permissão para escrever no dispositivo
+     * <p>
+     * Se o app não possuir a permissão, então a mesma será solicitada ao usuário.
      *
      * @param activity
      */

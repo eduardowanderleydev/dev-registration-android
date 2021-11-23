@@ -5,6 +5,10 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+/**
+ * Classe que representa o endereço da pessoa no currículo.
+ * Através do campo cep todos os outros campos são preenchidos através de um webservice.
+ */
 @Entity
 public class Address implements Serializable {
 

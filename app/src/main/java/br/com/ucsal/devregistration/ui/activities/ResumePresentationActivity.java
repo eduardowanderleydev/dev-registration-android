@@ -15,6 +15,9 @@ import br.com.ucsal.devregistration.exception.ResumeNotFoundException;
 import br.com.ucsal.devregistration.util.PDFUtils;
 import br.com.ucsal.devregistration.util.PermissionUtils;
 
+/**
+ * Activity responsável por renderizar os dados de um currículo e disponibilizar opção de exportar currículo para PDF.
+ */
 public class ResumePresentationActivity extends AppCompatActivity {
 
     private TextView personName;
@@ -48,6 +51,9 @@ public class ResumePresentationActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Método responsável por fazer o bind entre os atributos definidos e os elementos da view.
+     */
     private void configureViews() {
         personName = findViewById(R.id.name);
         personEmail = findViewById(R.id.email);
@@ -58,14 +64,17 @@ public class ResumePresentationActivity extends AppCompatActivity {
         personSkills = findViewById(R.id.skills);
         personCity = findViewById(R.id.city);
         personState = findViewById(R.id.state);
-        personDistrict= findViewById(R.id.adressDistrict);
-        personStreet= findViewById(R.id.adressStreet);
+        personDistrict = findViewById(R.id.adressDistrict);
+        personStreet = findViewById(R.id.adressStreet);
         btnExport = findViewById(R.id.btn_export);
     }
 
+    /**
+     * Método responsável por fazer o bind dos elementos da view com o currículo que foi recebido na Intent.
+     */
     private void bindIntentResumeInViewResume() {
         Intent intent = getIntent();
-        if (intent.hasExtra("resume")){
+        if (intent.hasExtra("resume")) {
 
             Resume resume = (Resume) intent.getSerializableExtra("resume");
             personName.setText(resume.getName());
@@ -85,6 +94,13 @@ public class ResumePresentationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Método responsável pela chamada a classe de geração de pdf com base nas informações do currículo
+     * <p>
+     * Exibe um Toast de sucesso caso a exportação tenha ocorrido com sucesso.
+     * <p>
+     * Caso haja algum erro na exportação do currículo para PDF, é exibido um Toast explicando que houve uma falha ao gerar o PDF.
+     */
     public void generatePDF() {
         PDFUtils pdf = new PDFUtils(this.personName, this.personCity, this.personState, this.personDistrict, this.personStreet, this.personEmail,
                 this.personPhone, this.personGoal, this.personEducation, this.personExperience, this.personSkills);

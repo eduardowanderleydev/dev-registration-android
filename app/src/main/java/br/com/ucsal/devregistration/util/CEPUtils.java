@@ -2,6 +2,9 @@ package br.com.ucsal.devregistration.util;
 
 import br.com.ucsal.devregistration.exception.InvalidCEPException;
 
+/**
+ * Classe responsável por cuidar da validação do CEP digitado pelo usuário.
+ */
 public class CEPUtils {
 
     public static boolean validaCEP(String cep) throws InvalidCEPException {

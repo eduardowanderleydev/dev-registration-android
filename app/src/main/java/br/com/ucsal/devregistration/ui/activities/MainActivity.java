@@ -15,6 +15,9 @@ import br.com.ucsal.devregistration.db.Db;
 import br.com.ucsal.devregistration.domain.Resume;
 import br.com.ucsal.devregistration.ui.adapter.ResumeAdapter;
 
+/**
+ * Activity principal, responsável por listar os currículos na tela, além de configurar cliques e botões.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
@@ -38,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         configureClickToOpenResumePreview();
     }
 
+    /**
+     * Método responsável por configurar que quando o usuário der um clique rápido em um dos currículos, será chamada uma nova activity exibindo os dados do currículo na tela.
+     */
     private void configureClickToOpenResumePreview() {
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(MainActivity.this, ResumePresentationActivity.class);
@@ -50,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
         db = Db.getInstance(this);
     }
 
+    /**
+     * Método responsável por configurar clique longo para excluir um currículo na lista.
+     */
     private void configureLongClickToRemoveResume() {
         listView.setOnItemLongClickListener((adapterView, view, i, l) -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -80,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Método responsável por configurar clique no botão de adicionar um currículo, chamando a activity responsável pelo registro de um novo currículo.
+     */
     private void configureButtonAddResume() {
         buttonAddResume.setOnClickListener(view -> {
             Intent toGo = new Intent(MainActivity.this, RegistrationActivity.class);
@@ -87,16 +99,25 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Método responsável por remover um ítem do banco de dados e da listView.
+     */
     private void removeResume(Resume resumeToRemove) {
         db.resumeDAO().delete(resumeToRemove);
         adapter.remove(resumeToRemove);
     }
 
+    /**
+     * Método responsável por configurar o adapter no listView.
+     */
     private void configureAdapter() {
         adapter = new ResumeAdapter(this, db.resumeDAO().findAll());
         listView.setAdapter(adapter);
     }
 
+    /**
+     * Método responsável por fazer o bind entre os atributos definidos e os elementos da view.
+     */
     private void configureViews() {
         listView = findViewById(R.id.list_resumes);
         buttonAddResume = findViewById(R.id.fab_adicionar);

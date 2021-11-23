@@ -7,6 +7,10 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+/**
+ * Classe que representa um currículo.
+ * Todas as operações de banco de dados são realizadas em cima dessa entidade.
+ */
 @Entity(tableName = "resume")
 public class Resume implements Serializable {
 
@@ -21,6 +25,9 @@ public class Resume implements Serializable {
     private String goal;
     private String knowledgeAndSkills;
 
+    /**
+     * O endereço é anotado como @Embedded, dessa forma todos os atributos referentes ao endereço serão armazenados na mesma tabela que o currículo.
+     */
     @Embedded
     private Address address;
 

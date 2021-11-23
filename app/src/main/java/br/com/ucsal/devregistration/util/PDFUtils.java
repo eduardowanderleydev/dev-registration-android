@@ -5,18 +5,25 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
 import android.os.Environment;
-import android.view.View;
 import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import br.com.ucsal.devregistration.R;
-
+/**
+ * Classe responsável por exportar um currículo em formato PDF para o diretório de Downloads do dispositivo.
+ */
 public class PDFUtils {
 
+    /**
+     * Path onde está localizado o diretório 'Downloads' do dispositivo
+     */
     private final File FILE_PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+
+    /**
+     * Flag que é setada como true caso a exportação do PDF ocorra sem nenhum problema.
+     */
     private boolean isGenerated = false;
 
     private TextView personName;
@@ -45,6 +52,11 @@ public class PDFUtils {
         this.personSkills = personSkills;
     }
 
+    /**
+     * Método responsável por agrupar a lógica necessária para a exportação do PDF.
+     *
+     * @return true caso a exportação tenha ocorrido com sucesso.
+     */
     public boolean generatePDF() {
         PdfDocument doc = new PdfDocument();
 
@@ -58,7 +70,7 @@ public class PDFUtils {
         Paint textColor = new Paint();
         textColor.setColor(Color.BLACK);
 
-        writeOnScreen(canvas, textColor);
+        writeOnPage(canvas, textColor);
 
         doc.finishPage(page);
 
@@ -74,7 +86,13 @@ public class PDFUtils {
         return isGenerated;
     }
 
-    private void writeOnScreen(Canvas canvas, Paint textColor) {
+    /**
+     * Método responsável por escrever as informações do currículo na página do pdf que será exportado.
+     *
+     * @param canvas
+     * @param textColor
+     */
+    private void writeOnPage(Canvas canvas, Paint textColor) {
         // name
         canvas.drawText(personName.getText().toString(), 200, 100, textColor);
 

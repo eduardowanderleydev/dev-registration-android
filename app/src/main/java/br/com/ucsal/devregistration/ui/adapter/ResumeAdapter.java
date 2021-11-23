@@ -12,6 +12,9 @@ import java.util.List;
 import br.com.ucsal.devregistration.R;
 import br.com.ucsal.devregistration.domain.Resume;
 
+/**
+ * Classe que representa o Adapter que será usado para renderizar os currículos na página principal.
+ */
 public class ResumeAdapter extends BaseAdapter {
 
     private List<Resume> data;

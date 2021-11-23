@@ -11,6 +11,9 @@ import java.util.Scanner;
 
 import br.com.ucsal.devregistration.domain.Address;
 
+/**
+ * Classe responsável por fazer a comunicação com o webservice viaCEP, para obtenção dos dados de endereço do usuário através do cep digitado.
+ */
 public class HttpService extends AsyncTask<Void, Void, Address> {
 
     private final String cep;
@@ -19,6 +22,12 @@ public class HttpService extends AsyncTask<Void, Void, Address> {
         this.cep = cep;
     }
 
+    /**
+     * Método que contém a lógica para realizar a requisição para o web service em background.
+     *
+     * @param voids
+     * @return o endereço convertido de um objeto JSON para um objeto Address.
+     */
     @Override
     protected Address doInBackground(Void... voids) {
         StringBuilder resposta = new StringBuilder();

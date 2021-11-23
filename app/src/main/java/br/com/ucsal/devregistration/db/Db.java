@@ -10,6 +10,9 @@ import br.com.ucsal.devregistration.dao.ResumeDAO;
 import br.com.ucsal.devregistration.domain.Address;
 import br.com.ucsal.devregistration.domain.Resume;
 
+/**
+ * Classe responsável por fazer a comunicação com o banco de dados Room.
+ */
 @Database(entities = {Address.class, Resume.class}, exportSchema = false, version = 1)
 public abstract class Db extends RoomDatabase {
 
