@@ -16,7 +16,6 @@ import br.com.ucsal.devregistration.R;
 
 public class PDFUtils {
 
-    private final View view;
     private final File FILE_PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
     private boolean isGenerated = false;
 
@@ -32,9 +31,18 @@ public class PDFUtils {
     private TextView personExperience;
     private TextView personSkills;
 
-    public PDFUtils(View view) {
-        this.view = view;
-        configureViews(view);
+    public PDFUtils(TextView personName, TextView personCity, TextView personState, TextView personDistrict, TextView personStreet, TextView personEmail, TextView personPhone, TextView personGoal, TextView personEducation, TextView personExperience, TextView personSkills) {
+        this.personName = personName;
+        this.personCity = personCity;
+        this.personState = personState;
+        this.personDistrict = personDistrict;
+        this.personStreet = personStreet;
+        this.personEmail = personEmail;
+        this.personPhone = personPhone;
+        this.personGoal = personGoal;
+        this.personEducation = personEducation;
+        this.personExperience = personExperience;
+        this.personSkills = personSkills;
     }
 
     public boolean generatePDF() {
@@ -93,19 +101,5 @@ public class PDFUtils {
         // skills
         canvas.drawText("Conhecimento técnico e habilidades :", 105, 360, textColor);
         canvas.drawText(personSkills.getText().toString(), 105, 375, textColor);
-    }
-
-    private void configureViews(View view) {
-        personName = view.findViewById(R.id.name);
-        personEmail = view.findViewById(R.id.email);
-        personPhone = view.findViewById(R.id.phoneNumber);
-        personGoal = view.findViewById(R.id.goal);
-        personEducation = view.findViewById(R.id.education);
-        personExperience = view.findViewById(R.id.experience);
-        personSkills = view.findViewById(R.id.skills);
-        personCity = view.findViewById(R.id.city);
-        personState = view.findViewById(R.id.state);
-        personDistrict = view.findViewById(R.id.adressDistrict);
-        personStreet = view.findViewById(R.id.adressStreet);
     }
 }

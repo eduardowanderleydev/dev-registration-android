@@ -2,7 +2,6 @@ package br.com.ucsal.devregistration.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,7 +42,8 @@ public class ResumePresentationActivity extends AppCompatActivity {
 
         btnExport.setOnClickListener(view -> {
             PermissionUtils.verifyStoragePermissions(this);
-            generatePDF(view);
+
+            generatePDF();
         });
 
     }
@@ -85,8 +85,9 @@ public class ResumePresentationActivity extends AppCompatActivity {
         }
     }
 
-    public void generatePDF(View view) {
-        PDFUtils pdf = new PDFUtils(view);
+    public void generatePDF() {
+        PDFUtils pdf = new PDFUtils(this.personName, this.personCity, this.personState, this.personDistrict, this.personStreet, this.personEmail,
+                this.personPhone, this.personGoal, this.personEducation, this.personExperience, this.personSkills);
         boolean isGenerated = pdf.generatePDF();
         if (isGenerated) {
             Toast.makeText(this, "Download realizado com sucesso.", Toast.LENGTH_SHORT).show();

@@ -40,7 +40,7 @@
 
     <TextView
         android:id="@+id/education"
-        android:layout_width="wrap_content"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:text=""
         app:layout_constraintStart_toStartOf="@+id/label_education"
@@ -81,7 +81,7 @@
 
     <TextView
         android:id="@+id/skills"
-        android:layout_width="331dp"
+        android:layout_width="310dp"
         android:layout_height="37dp"
         android:text=""
         app:layout_constraintStart_toStartOf="@+id/label_knowledgeAndSkills"
